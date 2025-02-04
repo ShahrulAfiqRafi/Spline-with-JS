@@ -2,6 +2,8 @@ Purpose
 
 To display status of each machine on a website together with interactive 3D layout
 
+
+
 Targets
 
 - [x] Successfully run local website using Vanilla JS embeded Spline3D
