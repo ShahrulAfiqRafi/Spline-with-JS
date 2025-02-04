@@ -5,3 +5,7 @@ Goals
 - [ ] REST API GET from NI SystemLink for on screen information
 - [ ] Side Panel feature for on screen information
 - [ ] Webhooks test for Spline variables
+
+
+
+References from: github.com/mandrasch/spline-selfhosted
