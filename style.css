@@ -3,3 +3,29 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
 }
+
+#side-bar{
+	position: absolute;
+	width: 600px;
+	height: 100%;
+	background: #fff;
+	right:-600px;
+	transition: .4s;
+}
+
+#side-bar.active{
+	right:0;
+}
+
+li{
+	color: #000;
+	list-style: none;
+	font-size: 15px;
+	cursor: pointer;
+	padding-left:5px; 
+}
+
+li:hover{
+	background: #000;
+	color: red;
+}

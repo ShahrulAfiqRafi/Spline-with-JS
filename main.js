@@ -1,48 +1,51 @@
-
-
 import './style.css'
-
-// Import spline scene via vanillajs runtime: 
-
 import { Application } from '@splinetool/runtime';
+import Sidebar from '@eardi/vanilla-js-sidebar';
 
+const button = document.querySelector('.toggle');
 const canvas = document.getElementById('canvas3d');
-const app = new Application(canvas);
-app.load('https://prod.spline.design/LlW4A5GgQVsJsEqf/scene.splinecode');
+const myVar = { EnumStat: 0};
+
+const spline = new Application(canvas);
+spline
+	.load('https://prod.spline.design/uuI1zZPhoxzY4bPc/scene.splinecode', myVar)
+	.then(() => {
+		const obj = spline.findObjectByName('Cube');
+        
+        //move object by clicking
+        button.addEventListener('click', () => { 
+            console.log("Move!");
+            obj.position.x += 10;
+        });
+        
+        //change variables
+        for (let i = 0; i < 5; i++) {
+            spline.setVariable('EnumStat', i);
+            console.log(i);
+          }
+        
+        //Event listener to trigger
+        spline.addEventListener('mouseDown', (e) => {
+			if (e.target.name === 'Cube') {
+				console.log('I have been clicked!');
+                show();
+			}
+		});
+		
+	});
 
 
+//show sidebar function
+function show(){
+    var sideBar = document.getElementById('side-bar');
+    sideBar.classList.toggle('active');
+}
 
 canvas.width =window.innerWidth;
 canvas.height = window.innerHeight;
 
 
 
-// TODO: does not work?
-// import spline viewer webcomponent
-//import { SplineViewer } from '@splinetool/viewer';
 
-// Vite scaffold demo code:
-// import javascriptLogo from './javascript.svg'
-// import viteLogo from '/vite.svg'
-// import { setupCounter } from './counter.js'
 
-// document.querySelector('#app .vite-demo-content').innerHTML = `
-//   <div>
-//     <a href="https://vitejs.dev" target="_blank">
-//       <img src="${viteLogo}" class="logo" alt="Vite logo" />
-//     </a>
-//     <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-//       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-//     </a>
-//     <h1>Hello Vite!</h1>
-//     <div class="card">
-//       <button id="counter" type="button"></button>
-//     </div>
-//     <p class="read-the-docs">
-//       Click on the Vite logo to learn more
-//     </p>
-//   </div>
-// `
-
-// setupCounter(document.querySelector('#counter'))
 
