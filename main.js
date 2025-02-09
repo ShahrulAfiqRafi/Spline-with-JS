@@ -1,6 +1,6 @@
-import './style.css'
+import './styles.css'
 import { Application } from '@splinetool/runtime';
-import Sidebar from '@eardi/vanilla-js-sidebar';
+//import Sidebar from '@eardi/vanilla-js-sidebar';
 
 const button = document.querySelector('.toggle');
 const canvas = document.getElementById('canvas3d');

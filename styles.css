@@ -2,15 +2,19 @@
 html, body {
   margin: 0 !important;
   padding: 0 !important;
+  font-family: 'Poppins', sans-serif;
+  background-color: white
 }
 
 #side-bar{
 	position: absolute;
-	width: 600px;
+	width: 500px;
 	height: 100%;
-	background: #fff;
+	background-color: #F0F8FF;
 	right:-600px;
 	transition: .4s;
+	padding: 20px;
+
 }
 
 #side-bar.active{
@@ -18,14 +22,9 @@ html, body {
 }
 
 li{
-	color: #000;
-	list-style: none;
-	font-size: 15px;
-	cursor: pointer;
-	padding-left:5px; 
+
 }
 
 li:hover{
-	background: #000;
-	color: red;
+
 }

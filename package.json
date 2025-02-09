@@ -12,7 +12,9 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "@splinetool/runtime": "^0.9.493",
-    "@splinetool/viewer": "^0.9.493"
+    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^0.9.526",
+    "@splinetool/viewer": "^0.9.493",
+    "datatables.net-dt": "^2.2.2"
   }
 }

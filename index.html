@@ -2,23 +2,105 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <!-- DataTable -->
+    <link rel="stylesheet" type="text/css" href="lib/datatables/dataTables.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Traffic Light System</title>
   </head>
   
   <body>
     <button class="toggle">Toggle</button>
+    <img id="thisImg" src="images/racoon-pedro.gif" alt="" style="display: none;">
     <div id="side-bar">
-      <ul>
-        <li>Home</li>
-        <li>About</li>
-        <li>Services</li>
-        <li>Contact</li>
-      </ul>
+      <div>
+        <!-- Image -->
+        <div style="padding-bottom: 30px;">
+          <img src="images/gundam.jpg" alt="gundam" width="500px;" >
+        </div>
+      
+        <!-- Description -->
+         <div>
+            <h2 style="color: red;" >GAT-X102 Duel Gundam</h2>
+            <p style="color: red;">
+              The MSZ-010 ΖΖ Gundam (aka ΖΖ Gundam, ZZ; pronounced "Double Zeta") is the titular mobile suit of the anime Mobile Suit Gundam ZZ and is piloted by Judau Ashta.
+            </p>
+         </div>
+        <!-- table -->
+        <div style="background-color:white; padding: 10px;">
+          <h3>The Gundam</h3>
+          <table id="dt-description">
+            <thead >
+              <tr>
+                <th>title</th>
+                <th>Description</th>
+                <th>details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>nonek</td>
+                <td>New stuff happened</td>
+                <td>This is new stuff</td>
+              </tr>
+              <tr>
+                <td>saya</td>
+                <td>New stuff happened</td>
+                <td>This is new stuff</td>
+              </tr>
+              <tr>
+                <td>panjang</td>
+                <td>New stuff happened</td>
+                <td>This is new stuff</td>
+              </tr>
+      
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+      <footer style="margin-top: 20px; font-size: 20px; font-weight: bold;">
+        contact us in bio
+      </footer>
+      <div style="display: flex; justify-content: center; margin-top: 20px;">
+        <button id="thisBtn" type="button" style="width: 300px; height: 50px;">Click this button to see our update!</button>
+      </div>
+      
+
+
     </div>
     <canvas id="canvas3d"></canvas>
     <script type="module" src="/main.js"></script>
+    <!-- Jquery -->
+    <script src="lib/jquery/jquery-3.7.1.js"></script>
+    <!-- DataTables -->
+    <script src="lib/datatables/dataTables.js"></script>
 
   </body>
 </html>
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.toggle').on('click', function(){
+      console.log("test work!");
+    });
+
+    $('#thisBtn').on('click', function(){
+      $('#thisImg').show();
+    });
+
+    var dtDescription = $('#dt-description').DataTable({
+      bAutoWidth: false, 
+      responsive: false, 
+      columns: [
+        { data: "title", width: "20%"},
+        { data: "description", width: "50%"},
+        { data: "details", width: "30%"},
+      ]
+      });
+  });
+
+</script>
+
+
